@@ -1,0 +1,10 @@
+
+public class Lec4_Loop4 {
+// 1~100까지의 합
+	int i = 1;
+	int sum = 0;
+	sum = sum + i; // sum <- 1
+	i++;
+	sum = sum + i; // sum <- 3
+
+}

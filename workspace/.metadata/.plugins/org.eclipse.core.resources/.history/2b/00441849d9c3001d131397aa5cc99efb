@@ -1,0 +1,14 @@
+package Jw2;
+
+import java.util.Scanner;
+
+public class Jwprac1 {
+public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+	for(int i = 0; i<20; i++)
+	System.out.println("숫자입력 :"+" ");
+	int inputInt = s.nextInt();
+	
+	System.out.println(7 * (inputInt + i));
+}
+}

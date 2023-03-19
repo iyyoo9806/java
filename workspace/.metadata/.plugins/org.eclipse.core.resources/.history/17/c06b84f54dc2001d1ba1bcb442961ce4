@@ -1,0 +1,87 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class First {
+public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+	Random r = new Random();
+	int totalCount = 0;  //전체
+	int vicCount = 0;    //승리
+	int loseCount = 0;   //패배
+	int drawCount = 0;   //비긴것
+	
+	for (int i = 0; i<99999; i++) {
+	
+	int randomInt = r.nextInt(3);
+	System.out.println("0 = 가위, 1 = 바위, 2 = 보 , q = 종료");
+	String inputString = s.nextLine();
+	
+	if(inputString.equals("q")) {
+		System.out.println("종료되었습니다.");
+		System.out.println(vicCount);
+		System.out.println(totalCount);
+		System.out.println("승률은" +" "+ ((vicCount/(double)totalCount)*100)+" " + "입니다.");
+		break;
+	}
+	
+	int inputNumber = Integer.parseInt(inputString);
+	
+	if(randomInt == 0) {
+		if(inputNumber == 1) {
+			System.out.println("이겼습니다.");
+			totalCount++;
+			vicCount++;
+		}else if(inputNumber == 2) {
+			System.out.println("졌습니다.");
+			totalCount++;
+			loseCount++;
+		}else if(inputNumber == 0) {
+			System.out.println("비겼습니다.");
+			totalCount++;
+			drawCount++;
+		}else {
+			System.out.println("입력값이 잘못되었습니다. 다시 입력해 주세요.");
+		}
+	}
+	if(randomInt == 1) {
+		if(inputNumber == 2) {
+			System.out.println(("이겼습니다."));
+			totalCount++;
+			vicCount++;
+		}else if(inputNumber == 0) {
+			System.out.println("졌습니다.");
+			totalCount++;
+			loseCount++;
+		}else if(inputNumber == 1) {
+			System.out.println("비겼습니다.");
+			totalCount++;
+			drawCount++;
+		}else {
+			System.out.println("입력값이 잘못되었습니다. 다시 입력해 주세요.");
+		}
+		}
+	if(randomInt == 2) {
+		if(inputNumber == 0) {
+			System.out.println("이겼습니다.");
+			totalCount++;
+			vicCount++;
+		}else if(inputNumber == 1) {
+			System.out.println("졌습니다.");
+			totalCount++;
+			loseCount++;
+		}else if(inputNumber == 2) {
+			System.out.println("비겼습니다.");
+			totalCount++;
+			drawCount++;
+		}else {
+			System.out.println("입력값이 잘못되었습니다. 다시 입력해 주세요.");
+		}
+	}
+	}
+	
+	
+}
+}
+
+
+

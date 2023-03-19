@@ -1,0 +1,10 @@
+package Jw2;
+
+import java.util.Scanner;
+
+public class Jwprac2 {
+public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+	Random r = new Random(101);
+}
+}

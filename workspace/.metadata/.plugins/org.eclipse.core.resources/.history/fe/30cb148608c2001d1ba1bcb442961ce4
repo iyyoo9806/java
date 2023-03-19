@@ -1,0 +1,18 @@
+
+public class Maincalss2 {
+public static void main(String[] args) {
+	boolean a;
+	
+	a = 3 ==3;
+	System.out.println(a);
+	
+	// 둘 중 하나만 만족 ||
+	// 둘 다 만족은 &&
+	// ! => not
+	
+	int x = 0;
+	a = x <10 || x % 2 == 0;
+	a = true || (10 < x);
+	
+}
+}

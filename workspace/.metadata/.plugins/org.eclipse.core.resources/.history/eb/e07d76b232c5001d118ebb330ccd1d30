@@ -1,0 +1,39 @@
+package Jw2;
+
+public class Rr {
+public static void main(String[] args) {
+	int n = 7;
+
+	if (n == 7) {
+	for (int i = 1; i < 10; i++) {
+		if ((n*i)%2 == 0) {
+			System.out.println(n + " x " + i + " = " + n * i + "," + "짝수입니다.");
+			} else {
+				System.out.println(n + " x " + i + " = " + n * i + "," + "홀수입니다.");
+	}
+	}
+	}
+	System.out.println("-----------------------------------");
+
+	if (n + 1 == 8) {
+		for (int i = 1; i < 10; i++) {
+		if (((n+1)*i) %2 == 0) {
+				System.out.println((n + 1) + " x " + i + " = " + (n + 1) * i + "," + "짝수입니다.");
+			} else {
+				System.out.println((n + 1) + " x " + i + " = " + (n + 1) * i + "," + "홀수입니다.");
+	}
+	}
+	}
+	System.out.println("-----------------------------------");
+	if (n + 2 == 9) {
+		for (int i = 1; i < 10; i++) {
+		if (((n+2)*i) %2 == 0) {
+				System.out.println((n + 2) + " x " + i + " = " + (n + 2) * i + "," + "짝수입니다.");
+			} else {
+				System.out.println((n + 2) + " x " + i + " = " + (n + 2) * i + "," + "홀수입니다.");
+			}
+		}
+
+	}
+}
+}

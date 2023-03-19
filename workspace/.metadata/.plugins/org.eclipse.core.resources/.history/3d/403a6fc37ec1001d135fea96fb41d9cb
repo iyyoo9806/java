@@ -1,0 +1,13 @@
+
+public class DebugClass2 {
+	public static void main(String[] args) {
+
+		// test 배열 선언
+		int[] newArray = { 1, 2, 3, 4, 5, 67, 8, 9, 10 };
+		for (int i =0; i< newArray.length; i++) {
+			//배열값 각각출력
+			System.out.println(newArray);
+		}
+
+	}
+}

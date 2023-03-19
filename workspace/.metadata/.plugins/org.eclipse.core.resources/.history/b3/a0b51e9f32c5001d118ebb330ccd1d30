@@ -1,0 +1,16 @@
+package Jw2;
+
+import java.util.Scanner;
+
+public class Rr {
+public static void main(String[] args) {
+	System.out.println("숫자를입력");
+	Scanner s = new Scanner(System.in);
+	int userNum = s.nextInt();
+	
+	for(int i = 1; i<userNum/3+1; i++) {
+		System.out.println( userNum + " " + (userNum - (i*3)) );
+		
+	}
+}
+}

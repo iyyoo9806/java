@@ -1,0 +1,8 @@
+package Jw2;
+
+public class Rr {
+public static void main(String[] args) {
+	int a = 11;
+	System.out.println(a/2);
+}
+}

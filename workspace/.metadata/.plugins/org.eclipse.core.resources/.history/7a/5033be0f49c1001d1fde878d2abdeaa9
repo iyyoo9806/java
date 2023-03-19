@@ -1,0 +1,26 @@
+
+public class Js_Loop3_if {
+
+	public static void main(String[] args) {
+		int a = 11;
+		
+		if(a == 10) {
+			System.out.println(" a == 10 ");
+			
+		if(a>10) {
+			System.out.println("a>10");
+		} else {
+			System.out.println("a<=10");
+		}
+		
+		if (a < 5) {
+			System.out.println("a<5");
+		} else if(a >= 5) {
+			System.out.println("a>=5");
+		} else {
+			System.out.println("else");
+		}
+		
+		}
+	}
+}

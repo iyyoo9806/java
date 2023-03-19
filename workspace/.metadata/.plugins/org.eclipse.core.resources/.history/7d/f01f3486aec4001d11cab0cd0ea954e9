@@ -1,0 +1,19 @@
+package Jw2;
+
+import java.util.Scanner;
+
+public class JwQuiz {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("숫자입력 :");
+		int inputInt = s.nextInt();
+		
+		if(inputInt>=21) {
+			System.out.println("ERROR");
+		}else if(inputInt<21) {
+			System.out.println("7" + " x " + inputInt + " = " +7*inputInt);
+		}
+		
+		
+}
+}

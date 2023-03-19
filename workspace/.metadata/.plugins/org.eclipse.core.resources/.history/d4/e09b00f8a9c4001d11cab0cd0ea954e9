@@ -1,0 +1,17 @@
+package Jw2;
+
+public class JwQuiz {
+public static void main(String[] args) {
+	int n = 7;
+	if(n == 7) {
+		for(int i=0; i<10; i++) {
+			System.out.println(n + " x " + i + "=" + n*i);
+		}
+	} if(n+1 == 8) {
+		for(int i=0; i<10; i++) {
+			System.out.println(n + " x " + i + "=" + n*i);
+		}
+	}
+	
+}
+}

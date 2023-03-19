@@ -1,0 +1,33 @@
+package Jw2;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class JwQuiz {
+public static void main(String[] args) {
+	
+	Scanner s = new Scanner(System.in);
+	Random c = new Random();
+	Random fr = new Random();
+	Random sr = new Random();
+	System.out.println("랜덤숫자놀이게임");
+	System.out.println("0~100사이의 숫자를 입력해주세요");
+	System.out.println("입력 :");
+	int iN = s.nextInt();
+	int pN = c.nextInt(101);
+	int fN = fr.nextInt(101);
+	int sN = sr.nextInt(101);
+	
+	
+	if(iN<0 || iN>100) {
+		System.out.println("0~100사이의 숫자가 아닙니다.");
+	}
+	else if(iN + fN == pN+ sN) {
+		System.out.println("사용자 입력 숫자는"+ iN +", 사용자입력숫자+랜덤숫자는"+ 
+	(iN+fN)+"컴퓨터 입력숫자 + 랜덤숫자는"+(pN+ sN)+", 무승부 입니다.");
+	}
+	
+}
+}
+
+

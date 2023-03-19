@@ -1,0 +1,13 @@
+
+public class Multiple {
+public static void main(String[] args) {
+	
+	for(int i = 2; i < 10; i++) {
+		System.out.println("6곱하기"+ i + "=" + (6 * i));
+		
+		for(int n = 1; n < 10; n++) {
+	System.out.println(n + "곱하기" + i + "=" + (n*i));
+		}
+}
+}
+}

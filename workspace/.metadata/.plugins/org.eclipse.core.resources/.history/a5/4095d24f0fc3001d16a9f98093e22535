@@ -1,0 +1,60 @@
+
+public class FirstJw {
+	public static void main(String[] args) {
+			
+		for (int i = 1; i < 100; i++) {
+			System.out.println(i);
+
+			if (i % 10 == 3 || i % 10 == 6 || i%10 ==9) {
+				System.out.println("박수");
+			} else {
+				System.out.println(i);
+			}
+//			if (i < 20 && i % 3 == 1) {
+//				System.out.println("박수");
+//			} else {
+//				System.out.println(i);
+//			}
+//			if (i < 30 && i % 3 == 2) {
+//				System.out.println("박수");
+//			} else {
+//				System.out.println(i);
+//			}
+//			if (i < 40 && i % 3 == 0) {
+//				System.out.println("박수");
+//			} else {
+//				System.out.println(i);
+//			}
+//			if (i < 50 && i % 3 == 1) {
+//				System.out.println("박수");
+//			} else {
+//				System.out.println(i);
+//			}
+//			if (i < 60 && i % 3 == 2) {
+//				System.out.println("박수");
+//			} else {
+//				System.out.println(i);
+//			}
+//			if (i < 70 && i % 3 == 0) {
+//				System.out.println("박수");
+//			} else {
+//				System.out.println(i);
+//			}
+//			if (i < 80 && i % 3 == 1) {
+//				System.out.println("박수");
+//			} else {
+//				System.out.println(i);
+//			}
+//			if (i < 90 && i % 3 == 2) {
+//				System.out.println("박수");
+//			} else {
+//				System.out.println(i);
+//			}
+//			if (i < 100 && i % 3 == 0) {
+//				System.out.println("박수");
+//			} else {
+//				System.out.println(i);
+//			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+
+public class ExecClass {
+public static void main(String[] args) {
+	int a = 10;
+	a = a+3;
+	System.out.println(a);
+	
+	a++;// a= a+1; 연산이 실행 후
+	a--;// a= a-1; 연산이 실행 후
+	++a;// 연산이 실행 전
+	--a;// 연산이 실행 전
+		//증감연산자는 중간에 넣지 말고 단독으로만 써야 헷갈리지 않는다.
+		
+	System.out.println(a);
+	int b = ++a *3 + a++ / 2;
+	
+}
+}

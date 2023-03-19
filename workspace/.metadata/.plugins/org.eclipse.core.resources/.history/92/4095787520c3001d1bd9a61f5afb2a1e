@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class ThirdJw {
+public static void main(String[] args) {
+	Scanner s= new Scanner(System.in);
+	int inputNumber = 0;
+	
+	for(int i=1; i<99999; i++) {
+		
+		System.out.println("숫자를 입력하세요");
+		
+	String inputString = s.nextLine();
+	
+		System.out.println(7 * (inputNumber);
+	
+		break;
+				
+}
+}
+}
+
+
+

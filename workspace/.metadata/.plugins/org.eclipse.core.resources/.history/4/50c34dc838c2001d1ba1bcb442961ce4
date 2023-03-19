@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class P40prac {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+
+		for (int i = 0; i < 99999999; i++) {
+			System.out.println("숫자를 입력하시오.");
+			System.out.println("q : 종료");
+
+			String inputValue = s.nextLine();
+			int number = Integer.parseInt(inputValue);
+
+			if (inputValue.equals("q")) {
+				break;
+
+			} else if (number % 2 == 0) {
+				System.out.println("짝수입니다.");
+			} else if (number % 2 == 1) {
+				System.out.println("홀수입니다.");
+			} else {
+				System.out.println("입력값이 잘못되었습니다. 다시 입력해주세요.");
+			}
+
+		}
+	}
+}
