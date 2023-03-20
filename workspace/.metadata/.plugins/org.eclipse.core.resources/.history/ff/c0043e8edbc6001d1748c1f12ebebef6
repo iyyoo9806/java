@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class FQuestions {
+public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+	
+	System.out.println("5개의 숫자를 입력하세요");
+	int a[] = {};
+	
+	for(int k=0; k<5; k++) {
+	int inputInt = s.nextInt();
+	a[k] = inputInt;
+	}
+	
+	int min = Integer.MAX_VALUE ,max = Integer.MIN_VALUE;
+	for(int i = 0; i<a.length; i++) {
+		if(a[i] < min) min = a[i];
+		if(a[i] > max) max = a[i];
+		
+	}System.out.println(min +","+ max);
+
+	
+	
+}
+}

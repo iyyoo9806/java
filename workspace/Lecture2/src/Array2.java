@@ -1,0 +1,28 @@
+
+public class Array2 {
+public static void main(String[] args) {
+	
+	int num [] = new int[5];//index를 0부터 , zero-based index
+	num[0] = 2;
+	num[1] = 3;
+	num[2] = 1;
+	num[3] = 5;
+	num[4] = 4;
+	// 초기화를 어떻게 해야 하나?에 대한 고민이 필요하다.
+	// 최소값을 담을 변수를 초기화 할 때는 ... 값으로 초기화를 해야 한다.
+	// 최대값을 담을 변수를 초기화 할 떄는 ... 값으로 초기화를 해야 한다.
+	// min값은 최대값으로 설정해야함
+	//최소값은 Integer.MAX_VALUE, 최대값은 Integer.MIN_VALUE
+	int min = Integer.MAX_VALUE ,max = Integer.MIN_VALUE;
+	
+	// 배열의 최대 최소 값을 출력해주세요.
+	for(int i = 0; i<num.length; i++) {
+		if(num[i] < min) min = num[i];
+		if(num[i] > max) max = num[i];
+		// if 한줄이면 { } 생략 가능
+		
+	}System.out.println("Max Value is "+ max);
+	System.out.println("Min Value is "+ min);
+}
+}
+

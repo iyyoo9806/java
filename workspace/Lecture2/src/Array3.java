@@ -1,0 +1,14 @@
+import java.util.Arrays;
+
+public class Array3 {
+public static void main(String[] args) {
+	int a[] = {1,2,3,4,5};
+	
+	System.out.println(Arrays.toString(a));
+	//sysout 치고 나오는 ln은 newLine 개행이라는 뜻, /r/n <br> <p>
+	for(int i = 0; i<a.length; i++) {
+		System.out.print(a[i]+" ");
+	}
+		
+}
+}

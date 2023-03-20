@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class FQuestions {
+public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+	
+	System.out.println("5개의 숫자를 입력하세요");
+	int first = s.nextInt();
+	int second = s.nextInt();
+	int third = s.nextInt();
+	int forth = s.nextInt();
+	int fifth = s.nextInt();
+	
+	
+	
+	System.out.println();
+	
+	
+}
+}
