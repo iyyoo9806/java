@@ -1,0 +1,26 @@
+package JW3;
+
+import java.util.Scanner;
+
+public class Jw3parc3 {
+public static void main(String[] args) {
+	int[] intValue = new int[7];
+	
+	Scanner scanner = new Scanner(System.in);
+	for(int i=0; i<7; i++) {
+		System.out.println("7개의 숫자를 입력해주세요.");
+		String strNum = scanner.nextLine();
+		intValue[i] = Integer.parseInt(strNum);
+	}
+	int highValue = 0;
+	int highValueIndex = -1;
+	
+	for(int i=0; i<7; i++) {
+		if(intValue[i]>highValue) {
+			highValue = intValue[i];
+			highValueIndex = i;
+		}
+	}
+	System.out.println("가장 높은 점수는" + " : " + highValueIndex);
+}
+}

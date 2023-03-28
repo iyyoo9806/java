@@ -1,0 +1,37 @@
+import java.util.Arrays;
+import java.util.Random;
+
+public class Hs1 {
+	public static void main(String[] args) {
+		Random random = new Random();
+		int[] randomarray = new int[7];
+		int tmp;
+		
+		for(int i=0; i<randomarray.length; i++) {
+			int randomNum = random.nextInt(101);
+			randomarray[i] = randomNum;
+			}
+		
+		for(int i =0; i<randomarray.length; i++) {
+		System.out.print(randomarray[i]+ " ");
+		}
+		
+			System.out.println();
+			
+		for(int i=0; i<randomarray.length-1; i++) {
+			for(int j=0; j<randomarray.length-(j+1); j++) {
+				if(randomarray[j]>randomarray[j+1]) {
+					tmp = randomarray[j];
+					randomarray[j] = randomarray[j+1];
+					randomarray[j+1] = tmp;
+		} 
+		}
+		}
+		
+		for(int i=0; i<randomarray.length; i++) {
+			System.out.print(randomarray[i]+ " ");
+		}
+		
+		
+}
+}

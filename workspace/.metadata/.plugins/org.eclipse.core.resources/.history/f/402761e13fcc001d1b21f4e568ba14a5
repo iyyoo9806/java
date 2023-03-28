@@ -1,0 +1,21 @@
+
+public class L3quiz1 {
+	public static void main(String[] args) {
+		String name[] = { "A", "B", "C", "D", "E" };
+		int kor[] = { 50, 60, 70, 80, 90 };
+		int eng[] = { 10, 70, 80, 90, 100 };
+		int math[] = { 95, 80, 90, 85, 80 };
+		int point[] = new int[name.length];
+		int tmp = 0;
+		for (int i = 0; i < name.length; i++) {
+			for (int j = 0; j < name.length-(i+1); j++) {
+				point[j] = kor[j] + eng[j] + math[j];
+				if(point[j]<point[j+1]) {
+					point[j] = tmp;
+					point[j+1] = point[j];
+					point[j] = tmp;
+				}
+			}System.out.println((i+1)+"등" + ":" + name[i] + "("+point[i]+")");
+		}
+	}
+}

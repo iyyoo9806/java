@@ -1,0 +1,8 @@
+
+public class P13project {
+public static void main(String[] args) {
+	System.out.println("asdsaf");
+	System.out.print("zxcvxzcv");
+	System.out.printf("%.2f" , 3.14245 );
+}
+}

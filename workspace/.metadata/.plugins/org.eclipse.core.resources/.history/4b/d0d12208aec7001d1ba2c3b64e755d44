@@ -1,0 +1,21 @@
+import java.util.Random;
+
+public class P13quiz {
+public static void main(String[] args) {
+	Random userRan = new Random();
+	Random comRan = new Random();
+	for(int i=0; i<99999; i++) {
+		System.out.println("주사위를 굴릴까요?");
+		break;
+	}
+	int userNum = userRan.nextInt(100)+1;
+	int comNum = comRan.nextInt(100)+1;
+	if(userNum == comNum) {
+		System.out.println("Draw");
+	}else if(userNum > comNum) {
+		System.out.println("You Win!");
+	}else {
+		System.out.println("You Lose!");
+	}
+}
+}

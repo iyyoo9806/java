@@ -1,0 +1,33 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class P13quiz {
+public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+	Random userRan = new Random();
+	Random comRan = new Random();
+	for(int i=0; i<99999; i++) {
+		System.out.println("주사위를 굴릴까요?");
+		
+	int userNum = userRan.nextInt(100)+1;
+	int comNum = comRan.nextInt(100)+1;
+	
+	String inputString = scanner.nextLine();
+	System.out.println(userNum);
+		System.out.println("컴퓨터가 주사위를 굴립니다. 실행할까요?");
+	String inputStringtwo = scanner.nextLine();
+	System.out.println(comNum);
+	
+	if(userNum == comNum) {
+		System.out.println("Draw");
+		
+	}else if(userNum > comNum) {
+		System.out.println("You Win!");
+		
+	}else {
+		System.out.println("You Lose!");
+		
+	}
+	}
+}
+}

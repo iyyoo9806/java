@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class P17 {
+	public static void main(String[] args) {
+		int[] score = new int[10];
+		//점수입력
+		Scanner scanner = new Scanner(System.in);
+		for(int i=0; i<10; i++) {
+			System.out.println(i+"번째 학생 점수 입력");
+			String inputNumber = scanner.nextLine();
+			score[i] = Integer.parseInt(inputNumber);
+		}
+		//학생별 점수 출력
+		for(int i = 0; i<10; i++) {
+			System.out.println(i+"번째 학생 점수 : "+score[i]);
+		}
+		int highScore = 0;
+		int higScoreIndex = -1;
+		for(int i=0; i<10; i++) {
+			if(score[i]>highScore) {
+				highScore = score[i];
+				higScoreIndex = i;
+			}
+		}
+		System.out.println(i + "번째 학생이 제일 점수가 높습니다.");
+	}
+}

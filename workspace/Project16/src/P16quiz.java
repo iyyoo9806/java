@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class P16quiz {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int[] score = new int[10];
+		
+		System.out.println("10명의 점수를 입력해 주세요.");
+		for(int i =0; i<10; i++) {
+			System.out.println((i+1) +"번째 점수를 입력해 주세요.");
+			score[i] = scanner.nextInt();
+		}
+		int hightScore = 0;
+		int highScoreIndex = 0;
+		for(int i = 0; i<10; i++) {
+			System.out.println((i+1)+"번째 사람의 점수는"+ score[i]+ "입니다.");
+			if(score[i]>hightScore) {
+				hightScore=score[i];
+				highScoreIndex = i+1;
+			}
+		}
+		System.out.println(highScoreIndex + "번재 학생이 제일 점수가 높습니다.");
+	}
+}

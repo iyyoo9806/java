@@ -1,0 +1,23 @@
+
+public class P12project {
+public static void main(String[] args) {
+	
+	for(int number = 2; number<101; number++) {
+		
+		boolean isPrime = true;
+		for(int i = 0; i<number; i++) { // 0부터 number -1 까지 반복
+			if(i <2) {
+				continue;
+			}
+			if(number % i == 0) {
+				isPrime = false;
+				break;
+			}
+		}
+		if(isPrime) {
+			System.out.println(number);
+		}
+	}
+	
+}
+}

@@ -1,0 +1,53 @@
+package JW3;
+
+import java.util.Scanner;
+
+public class Jw3parc3 {
+	public static void main(String[] args) {
+		int[] intValue = new int[7];
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("7개의 숫자를 입력해주세요.");
+		for (int i = 0; i < 7; i++) {
+			String strNum = scanner.nextLine();
+			intValue[i] = Integer.parseInt(strNum);
+		}
+
+		int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+		int minNum = 0, maxNum = 0;
+		for (int i = 0; i < 7; i++) {
+			if (min > intValue[i]) {
+				min = intValue[i];
+			}
+			if (max < intValue[i]) {
+				max = intValue[i];
+			}
+		}
+
+		System.out.println("가장 높은 점수는" + " : " + max);
+		System.out.println("가장 낮은 점수는" + " : " + min);
+
+		for (int i = 0; i < 7; i++) {
+			if (intValue[i] == min) {
+				minNum = minNum + 1;
+			}
+			if (intValue[i] == max) {
+				maxNum = maxNum + 1;
+			}
+		}
+		int finMin = min * minNum;
+		int finMax = max * maxNum;
+		
+		int finLenght = intValue.length - (minNum + maxNum);
+		if (finLenght == 0) {
+			System.out.println("ERROR");
+		} else {
+
+			int sum = 0;
+			for (int i = 0; i < 7; i++) {
+				sum = sum + intValue[i];
+			}
+			System.out.println(sum - (finMax - finMin) / (finLenght));
+		}
+	}
+}

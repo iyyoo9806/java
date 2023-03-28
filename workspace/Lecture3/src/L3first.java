@@ -1,0 +1,17 @@
+
+public class L3first {
+	public static void main(String[] args) {
+		printHello(0);
+		
+	}	
+	
+	
+	public static void printHello(int i) {
+		if(i >100 ) return;
+		System.out.println("Hello world");
+		printHello(++i);
+//		i++
+//		printHello(i);
+	}
+}
+////재귀함수(함수의 첫줄에 몇번을 불러올 것인지 쓰는것이 첫번째)

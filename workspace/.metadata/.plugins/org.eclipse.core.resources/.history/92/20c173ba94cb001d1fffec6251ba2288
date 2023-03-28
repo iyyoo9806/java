@@ -1,0 +1,13 @@
+package JW3;
+
+import java.util.Arrays;
+
+public class Jw3prac1 {
+public static void main(String[] args) {
+	String[] listA = {"!@#^1!%#@","&%2!#","3!@$)(&","%%&4#","@5^#!^&*"};
+	String senTense = Arrays.toString(listA);
+	System.out.println("listA : " + senTense);
+//	String[] listB = senTense.replaceAll();
+	
+}
+}
