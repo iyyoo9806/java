@@ -1,0 +1,11 @@
+package zNote;
+
+import java.util.Arrays;
+
+public class F {
+public static void main(String[] args) {
+	String s = "try hello world";
+	String [] arr = s.split(" ");
+	System.out.println(Arrays.toString(arr));
+}
+}

@@ -1,0 +1,10 @@
+package answer2;
+
+public class Student {
+	String name;
+	String address;
+	String sex;
+	Test[] test = new Test[2];
+	//Test middleTest;
+	//Test finalTest;
+}

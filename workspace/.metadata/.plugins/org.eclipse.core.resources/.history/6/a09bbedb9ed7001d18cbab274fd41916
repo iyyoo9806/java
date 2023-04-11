@@ -1,0 +1,13 @@
+package zNote;
+
+public class F {
+	public String solution(String s) {
+        String answer = "";
+        return answer;
+    }
+	
+	 
+	 public static void main(String[] args) {
+		System.out.println();
+	}
+}

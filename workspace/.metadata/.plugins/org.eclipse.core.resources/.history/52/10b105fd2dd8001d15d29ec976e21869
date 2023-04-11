@@ -1,0 +1,17 @@
+package answer2;
+
+import java.util.Scanner;
+
+public class Test {
+	String category;//중간 기말
+	int korScore;
+	int engScore;
+	int mathScore;
+	
+	public void middleScore() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("국어점수를 입력해주세요");
+		this.korScore = scanner.nextLine();
+		
+	}
+}

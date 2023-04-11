@@ -14,23 +14,19 @@ public class L3quiz1 {
 
 		for (int i = 0; i < name.length - 1; i++) {
 			for (int j = 0; j < name.length - (i + 1); j++) {
-				if (point[j] < point[j + 1]) {
+				if (point[j] > point[j + 1]) {
 					tmp = point[j];
 					point[j] = point[j + 1];
 					point[j + 1] = tmp;
 					tmp2 = name[j];
-					name[j] = name[j+1];
-					name[j+1] = tmp2;
-					
+					name[j] = name[j + 1];
+					name[j + 1] = tmp2;
+
 				}
 			}
 		}
-		
-		
-		
-		
 		for (int i = 0; i < name.length; i++) {
-			System.out.println(point[i]+name[i]);
+			System.out.println(point[i] + name[i]);
 		}
 	}
 }

@@ -7,9 +7,12 @@ public class L3first {
 	
 	
 	public static void printHello(int i) {
-		if(i >100 ) return;
+		if(i >100 ) {
+			return;
+		}else {
 		System.out.println("Hello world");
 		printHello(++i);
+		}
 //		i++
 //		printHello(i);
 	}

@@ -1,0 +1,27 @@
+package zNote;
+
+public class F {
+	 public static boolean solution(int x) {
+	        boolean answer = true;
+	        int sum = 0;
+	        String num = Integer.toString(x);
+	        String[] numArr = num.split("");
+	        int[] intArr = new int [numArr.length];
+	        for(int i=0; i<numArr.length; i++) {
+	        	intArr[i] = Integer.parseInt(numArr[i]);
+	        }
+	        for(int i=0;i<numArr.length; i++) {
+	        	sum = sum +intArr[i] ;
+	        }
+	        if(x%sum == 0) {
+	        	return true;
+	        }else {
+	        	return false;
+	        }
+	    }
+	
+	 
+	 public static void main(String[] args) {
+		System.out.println(solution(100));
+	}
+}

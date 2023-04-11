@@ -7,31 +7,32 @@ public class L3quiz2 {
 	public static void main(String[] args) throws Exception {
 		System.setIn(new FileInputStream("src/inputDC.txt"));
 		Scanner sc = new Scanner(System.in);
-
-		int T;
-		T = sc.nextInt();
+		int T = sc.nextInt();
 		int N;
-		int H;
+		int[] arr;
+		int[] cnt;
 		for (int test_case = 1; test_case <= T; test_case++) {
 			N = sc.nextInt();
-			int[] arr = new int[N];
-			int tmp;
-			for (int i = 0; i < arr.length; i++) {
+			cnt = new int[11];
+			arr = new int[N];
+			for (int i = 0; i < N; i++) {
 				arr[i] = sc.nextInt();
 			}
 
-			for (int i = 0; i < arr.length - 1; i++) {
-				for (int j = 0; j < arr.length - (i + 1); j++) {
-					if (arr[j] > arr[j + 1]) {
-						tmp = arr[j];
-						arr[j] = arr[j + 1];
-						arr[j + 1] = tmp;
+			for (int i = 0; i < arr.length; i++) {
+				for (int j = 0; j < i; j++) {
+					if (arr[i] == arr[j]) {
+						arr[i] = Integer.MIN_VALUE;
 					}
 				}
 			}
-			for (int i = 0; i < N; i++) {
-				System.out.print(arr[i]);
+
+			Arrays.sort(arr);
+			for (int i = 0; i < arr.length; i++) {
+				if (arr[i] != Integer.MIN_VALUE)
+					System.out.print(arr[i]);
 			}
+
 			System.out.println();
 		}
 	}

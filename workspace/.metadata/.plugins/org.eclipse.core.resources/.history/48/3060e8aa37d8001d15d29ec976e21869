@@ -1,0 +1,30 @@
+package answer2;
+
+import java.util.Scanner;
+
+public class Student {
+	String name;
+	String address;
+	String sex;
+	Test[] test = new Test[2];
+	
+	public void inputData() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("이름을 입력해 주세요");
+		this.name = scanner.nextLine();
+		System.out.println("주소를 입력해 주세요");
+		this.address = scanner.nextLine();
+		System.out.println("성별을 입력해 주세요");
+		this.sex = scanner.nextLine();
+		for(int i=0; i<test.length; i++) {
+			test[i] = new Test();
+			if(i==0) {
+				System.out.println("중간고사");
+				test[i].Score();
+			}else {
+				System.out.println("기말고사");
+				test[i].Score();
+			}
+		}
+	}
+}

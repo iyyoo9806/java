@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+public class A {
+	String groupName;
+	
+	public void groupRename() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("반 이름을 입력해주세요.");
+		this.groupName = scanner.nextLine();
+	}
+}

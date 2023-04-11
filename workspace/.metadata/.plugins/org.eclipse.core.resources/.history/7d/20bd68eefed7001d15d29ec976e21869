@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		People[] people = new People[9999];
+//		people[0] = new People();
+//		people[0].address;
+		int index = 0;
+		Scanner scanner = new Scanner(System.in);
+		for (int i = 0; i < 999999; i++) {
+			System.out.println("원하시는 메뉴를 선택해주세요");
+			System.out.println("1. 새 데이터 입력");
+			System.out.println("2. 전체 데이터 출력");
+			System.out.println("q. 종료");
+
+			String menuString = scanner.nextLine();
+			if (menuString.equals("q")) {
+				break;
+			} else if (menuString.equals("1")) {
+				people[index] = new People();
+//				people[index].name = "몰?루";
+//				people[index].address = "닐?루";
+//				people[index].sex = "아!루";
+				people[index].inputData();
+				index++;
+			} else if (menuString.equals("2")) {
+				// 전체출력
+			} else {
+				System.out.println("입력이 잘못되었습니다.");
+			}
+			System.out.println();
+			System.out.println();
+		}
+	}
+}

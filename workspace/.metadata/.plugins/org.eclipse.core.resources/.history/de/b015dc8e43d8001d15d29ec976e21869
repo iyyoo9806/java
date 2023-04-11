@@ -1,0 +1,21 @@
+package answer2;
+
+import java.util.Scanner;
+
+//1학년 내 클래스
+public class ClassRoom {
+	String name;//A반B반C반....
+	Student[] student = new Student[2];
+	
+	public void inputRoom(String s) {
+//		Scanner scanner = new Scanner(System.in);
+//		System.out.println("반 이름을 적어주세요.");
+//		this.name = scanner.nextLine();
+		this.name = s;
+		for(int i=0; i<student.length; i++) {
+			student[i] = new Student();
+			student[i].inputStudent();
+		}
+		
+	}
+}

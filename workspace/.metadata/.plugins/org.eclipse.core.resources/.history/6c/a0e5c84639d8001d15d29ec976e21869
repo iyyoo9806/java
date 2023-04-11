@@ -1,0 +1,20 @@
+package answer2;
+
+import java.util.Scanner;
+
+public class Main {
+public static void main(String[] args) {
+	ClassRoom A = new ClassRoom();
+	ClassRoom B = new ClassRoom();
+	ClassRoom C = new ClassRoom();
+	
+	
+	Scanner scanner = new Scanner(System.in);
+	for(int i=0; i<999999; i++) {
+		System.out.println("원하시는 반을 선택하세요.");
+		System.out.println("1. A반");
+		System.out.println("2. B반");
+		System.out.println("3. C반");
+	}
+}
+}

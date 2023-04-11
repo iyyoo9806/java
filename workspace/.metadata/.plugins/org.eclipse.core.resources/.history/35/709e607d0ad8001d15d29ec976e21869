@@ -1,0 +1,8 @@
+
+public class A {
+	String groupName;
+	
+	public void group() {
+		
+	}
+}
