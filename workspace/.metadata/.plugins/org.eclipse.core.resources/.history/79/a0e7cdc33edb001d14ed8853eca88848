@@ -1,0 +1,15 @@
+package zNote;
+
+import java.util.Arrays;
+
+public class A {
+	public static void main(String[] args) {
+		String answer = "";
+		String cipher = "dfjardstddetckdaccccdegk";
+		String[] a = cipher.split("");
+		int code = 4;
+		System.out.println(cipher.length());
+//		for(int i=0; i<a.length; )
+		
+	}
+}

@@ -1,0 +1,17 @@
+package zNote;
+
+import java.util.Arrays;
+
+public class A {
+	public static void main(String[] args) {
+		
+		int[] numbers = {1,2,3};
+		int tmp = 0;
+		int[] a = new int[numbers.length];
+			tmp = numbers[0];
+			numbers[0] = numbers[numbers.length-1];
+			numbers[numbers.length-1] = tmp;
+		
+		System.out.println(Arrays.toString(numbers));
+	}
+}

@@ -1,0 +1,19 @@
+package zNote;
+
+import java.util.Arrays;
+
+public class A {
+	public static void main(String[] args) {
+
+		int[] numbers = { 1, 2, 3 };
+		int tmp = 0;
+		for (int j = 0; j < numbers.length - 1; j++) {
+			for (int i = 0; i > numbers.length - 1; i++) {
+				tmp = numbers[i];
+				numbers[i] = numbers[i + 1];
+				numbers[i + 1] = tmp;
+			}
+		}
+		System.out.println(Arrays.toString(numbers));
+	}
+}

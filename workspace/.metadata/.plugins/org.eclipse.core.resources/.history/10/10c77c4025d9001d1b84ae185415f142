@@ -1,0 +1,21 @@
+package zNote;
+
+import java.util.Arrays;
+
+public class F {
+	public static int solution(int[] nums) {
+        int answer = 0;
+        Arrays.sort(nums);
+        System.out.println(Arrays.toString(nums));
+
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		int[] nums = {3,1,2,3};
+			solution(nums);
+	}
+}
+
+
+

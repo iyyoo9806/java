@@ -1,0 +1,7 @@
+package zNote;
+
+public class Dojang {
+	public static void main(String[] args) {
+		
+	}
+}

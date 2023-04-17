@@ -1,0 +1,18 @@
+package zNote;
+
+import java.util.Arrays;
+
+public class A {
+	public static void main(String[] args) {
+		
+		String my_string = "hi12392";
+		String b = my_string.replaceAll("[a-z]", "");
+		String[] a = b.split("");
+		Arrays.sort(a);
+		
+		System.out.println(Arrays.toString(a));
+//		for(int i)
+		
+		
+	}
+}

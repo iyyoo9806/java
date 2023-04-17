@@ -1,0 +1,21 @@
+package zNote;
+
+public class F {
+	public static int solution(int n, int k) {
+        int answer = 0;
+        int meat = 12000;
+        int bev = 2000;
+        if(n>10) {
+        	answer = n*meat + bev * k-(bev*(n/10));
+        }else {
+        	answer = n*meat + bev;
+        }
+        
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		System.out.println(solution(10,3));
+	}
+}

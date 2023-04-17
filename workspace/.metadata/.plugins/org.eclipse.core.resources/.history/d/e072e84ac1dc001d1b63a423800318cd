@@ -1,0 +1,19 @@
+
+public class Quiz5 {
+    public static String solution(int n) {
+        String answer = "";
+        for(int i=1; i<=n; i++) {
+        	if(i%2!=2) {
+        		answer = answer+"코";
+        	}else {
+        		answer = answer +"포";
+        	}
+        }
+        
+	        return answer;
+	    }
+    public static void main(String[] args) {
+    	int n = 5;
+		System.out.println(solution(n));
+	}
+}

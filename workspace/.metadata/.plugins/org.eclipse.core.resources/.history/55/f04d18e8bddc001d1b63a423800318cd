@@ -1,0 +1,13 @@
+
+public class Quiz2 {
+	public static int solution(String s) {
+        int answer = 0;
+        answer = Integer.parseInt(s);
+        
+        return answer;
+    }
+	public static void main(String[] args) {
+		String s = "123";
+		System.out.println(solution(s));
+	}
+}

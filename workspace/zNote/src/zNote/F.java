@@ -1,28 +1,20 @@
 package zNote;
 
-public class F {
-	public static String solution(String s) {
-		String answer = "";
-		String[] string = s.split("");
+import java.util.Arrays;
 
-		int sequence = 0;
-		
-		for (int i = 0; i < string.length; i++) {
-			if (string[i].equals(" ")) {
-				sequence = 0;
-			} else if (sequence % 2 == 0) {
-				string[i] = string[i].toUpperCase();
-				sequence = sequence + 1;
-			} else if (sequence % 2 != 0) {
-				string[i] = string[i].toLowerCase();
-				sequence = sequence + 1;
-			}
-			answer = answer + string[i];
-		}
-		return answer;
-	}
+public class F {
+	public static String solution(String my_string, int n) {
+        String answer = "";
+        String[] a = my_string.split("");
+//        System.out.println(Arrays.toString(a));
+        for(int i=0; i<n; i++){
+            
+        }
+        return answer;
+    }
 
 	public static void main(String[] args) {
-		System.out.println(solution("try hello world"));
+		String my_string = "hello";
+		System.out.println(solution(my_string,3));
 	}
 }

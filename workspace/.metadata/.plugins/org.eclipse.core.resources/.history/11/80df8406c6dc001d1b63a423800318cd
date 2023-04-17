@@ -1,0 +1,11 @@
+package zNote;
+
+import java.util.Arrays;
+
+public class A {
+	public static void main(String[] args) {
+		int[] array = {1,1,8,5,5,7};
+		String array2 = Arrays.toString(array);
+		System.out.println(array2);
+	}
+}

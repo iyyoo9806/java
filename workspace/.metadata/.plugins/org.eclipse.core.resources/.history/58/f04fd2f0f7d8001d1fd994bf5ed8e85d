@@ -1,0 +1,22 @@
+package zNote;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class Dojang {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String input = br.readLine();
+		String input2 = br.readLine();
+		String[] a = input.split(" ");
+		String[] b = input.split(" ");
+		int num =0;
+		for(int i=0; i<b.length; i++){
+			if(a[2]!=b[i]){
+				num=num+1;
+			}
+		}
+		System.out.println(num);
+	}
+}
