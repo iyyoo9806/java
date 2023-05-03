@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Product {
+	String name;
+	int price;
+	int stock;
+	int discount;
+	
+	public void setName() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("이름을 입력해 주세요.");
+		
+	}
+}

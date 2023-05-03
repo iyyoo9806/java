@@ -1,0 +1,43 @@
+package Movie;
+
+import java.util.Scanner;
+
+public class Title {
+	String name;
+	String genre;
+	int price;
+
+	public void titleName() {
+		System.out.println("영화의 제목을 입력해 주세요.");
+		Scanner scanner = new Scanner(System.in);
+		this.name = scanner.nextLine();
+	}
+
+	public void GenrePrice() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("영화의 장르를 선택해 주세요.");
+		Action action = new Action();
+		Fantasy fantasy = new Fantasy();
+		Romance romance = new Romance();
+		System.out.println("1 : " + action.name);
+		System.out.println("2 : " + fantasy.name);
+		System.out.println("3 : " + romance.name);
+		String inputString = scanner.nextLine();
+		int inputNum = Integer.parseInt(inputString);
+		if (inputNum == 1) {
+			this.genre = action.name;
+			this.price = action.price;
+		} else if (inputNum == 2) {
+			this.genre = fantasy.name;
+			this.price = fantasy.price;
+		} else if (inputNum == 3) {
+			this.genre = romance.name;
+			this.price = romance.price;
+		}
+	}
+	
+	public void inputMenu() {
+		titleName();
+		GenrePrice();
+	}
+}

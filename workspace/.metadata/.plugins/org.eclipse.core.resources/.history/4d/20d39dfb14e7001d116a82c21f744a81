@@ -1,0 +1,44 @@
+package Movie;
+
+import java.util.Scanner;
+
+public class MainClass {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("원하시는 영화 개수를 입력해 주세요.");
+		String moive = scanner.nextLine();
+		int movieNum = Integer.parseInt(moive);
+		Title[] title = new Title[movieNum];
+		int totalPrice = 0;
+		int count = 0;
+		for (int i = 0; i < 99999; i++) {
+			System.out.println("원하시는 선택지를 누르세요.");
+			System.out.println("1. 영화제목 입력.");
+			System.out.println("P. 입력된 영화 출력.");
+			System.out.println("q. 종료.");
+			String inputString = scanner.nextLine();
+			if (inputString.equals("1") && count < movieNum - 1) {
+				title[count].inputMenu();
+				count++;
+			} else if (inputString.equals("P")) {
+				System.out.println("영화의 총 개수");
+				System.out.println(movieNum);
+				System.out.println("영화정보");
+				for (int j = 0; j < count; j++) {
+					System.out.println(title[j].name + ", " + title[j].genre + ", " + title[j].price);
+				}
+				System.out.println("지불가격");
+				for (int j = 0; j < count; j++) {
+					totalPrice = totalPrice + title[j].price;
+				}
+				System.out.println(totalPrice);
+
+			} else if (inputString.equals("q")) {
+				System.out.println("종료되었습니다.");
+				break;
+			} else {
+				System.out.println("입력이 잘못되었습니다.");
+			}
+		}
+	}
+}

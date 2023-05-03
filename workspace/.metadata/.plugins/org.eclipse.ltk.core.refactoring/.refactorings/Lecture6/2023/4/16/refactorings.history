@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;L6.QUiz1&apos; to &apos;Solution&apos;&#x0D;&#x0A;- Original project: &apos;Lecture6&apos;&#x0D;&#x0A;- Original element: &apos;L6.QUiz1&apos;&#x0D;&#x0A;- Renamed element: &apos;L6.Solution&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;QUiz1&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;L6{QUiz1.java[QUiz1" matchStrategy="1" name="Solution" qualified="false" references="true" similarDeclarations="false" stamp="1681893245463" textual="false" version="1.0"/>
+</session>

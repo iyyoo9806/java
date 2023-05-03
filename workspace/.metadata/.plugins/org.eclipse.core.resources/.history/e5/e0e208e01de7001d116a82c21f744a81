@@ -1,0 +1,12 @@
+package Movie;
+
+public class Genre {
+	String name;
+	Title[] title = new Title[100];
+	int price;
+
+	Genre(){
+		this.name = "장르";
+		this.price = 10000;
+	}
+}

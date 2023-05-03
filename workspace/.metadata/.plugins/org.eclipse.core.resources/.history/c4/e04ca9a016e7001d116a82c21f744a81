@@ -1,0 +1,10 @@
+package Movie;
+
+import java.util.Scanner;
+
+public class Title {
+	String name;
+	String genre;
+	int price;
+	
+}

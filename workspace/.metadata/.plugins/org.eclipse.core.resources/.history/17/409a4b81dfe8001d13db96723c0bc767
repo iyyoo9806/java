@@ -1,0 +1,33 @@
+package zNote;
+
+import java.util.Arrays;
+
+public class Asd {
+	public static void main(String[] args) {
+		String[] park = { "OSO", "OOO", "OXO", "OOO" };
+		String[] routes = { "E 2", "S 3", "W 1" };
+		int y = park.length;
+		int x = park[0].length();
+		String[][] arr = new String[y][x];
+
+		for (int i = 0; i < y; i++) {
+			String[] str = park[i].split("");
+			for (int j = 0; j < x; j++) {
+				arr[i][j] = str[j];
+			}
+		}
+		String test = "E 2";
+		String[] test2 = new String[1];
+		String a ="";
+		int b = 0;
+		a = test.replaceAll("[0-9]","*");
+		System.out.println(a);
+		
+		String[] direction = new String[routes.length];
+		int[] go = new int[routes.length];
+		for(int i=0; i<routes.length; i++) {
+			
+		}
+		
+	}
+}

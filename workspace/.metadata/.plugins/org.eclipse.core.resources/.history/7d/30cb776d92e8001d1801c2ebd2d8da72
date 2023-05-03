@@ -1,0 +1,155 @@
+import java.util.Scanner;
+
+public class Store {
+	String name;
+	int index = 0;
+	int index2 = 0;
+	int productCount = 0;
+	int total = 0;
+	double avg = 0;
+	Product[] product = new Product[100];
+	Customer[] customer = new Customer[100];
+
+	Store(String name) {
+		this.name = name;
+	}
+
+	public void addProduct() {
+		System.out.println("추가할 상품정보를 입력해 주세요.");
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("상품 이름 : ");
+		String name = scanner.nextLine();
+		System.out.println("상품 가격 : ");
+		String inputPrice = scanner.nextLine();
+		int price = Integer.parseInt(inputPrice);
+		System.out.println("상품 재고 : ");
+		String inputStock = scanner.nextLine();
+		int stock = Integer.parseInt(inputStock);
+		System.out.println("상품 할인율 : ");
+		String inputDiscount = scanner.nextLine();
+		int discount = Integer.parseInt(inputDiscount);
+		double realPrice = (Math.ceil(((double) price / 100))) * (100 - discount);
+		this.product[this.index] = new Product(name, price, stock, discount, realPrice);
+		this.index++;
+	}
+
+	public void printProduct() {
+		for (int i = 0; i < this.index; i++) {
+			if (product[i].stock == 0) {
+				product[i].price = 0;
+				product[i].discount = 0;
+				System.out.println(i + "번째 상품은 품절되었습니다.");
+			} else {
+				System.out.println(i + "번째 " + "상품명 : " + product[i].name + ", 상품가격 : " + product[i].price
+						+ ", 상품 재고 : " + product[i].stock + ", 상품할인율 : " + product[i].discount + "%" + ", 판매가 : "
+						+ Math.ceil(product[i].realPrice));
+			}
+		}
+	}
+
+	public void printStats() {
+		for (int i = 0; i < this.index; i++) {
+			total = total + product[i].price * product[i].stock;
+			productCount = productCount + product[i].stock;
+		}
+		this.avg = this.total / (double) this.productCount;
+		System.out.println("총 상품 수 : " + this.productCount);
+		System.out.println("평균 가격 : " + this.avg);
+	}
+
+	public void printPriceHigh() {
+		for (int i = 0; i < this.index - 1; i++) {
+			for (int j = i + 1; j < this.index; j++) {
+				if (this.product[i].price < this.product[j].price) {
+					Product temp = this.product[i];
+					this.product[i] = this.product[j];
+					this.product[j] = temp;
+				}
+			}
+		}
+		this.printProduct();
+	}
+
+	public void printPriceLow() {
+		for (int i = 0; i < this.index - 1; i++) {
+			for (int j = i + 1; j < this.index; j++) {
+				if (this.product[i].price > this.product[j].price) {
+					Product temp = this.product[i];
+					this.product[i] = this.product[j];
+					this.product[j] = temp;
+				}
+			}
+		}
+		this.printProduct();
+	}
+
+	public void printDiscountHigh() {
+		for (int i = 0; i < this.index - 1; i++) {
+			for (int j = i + 1; j < this.index; j++) {
+				if (this.product[i].discount < this.product[j].discount) {
+					Product temp = this.product[i];
+					this.product[i] = this.product[j];
+					this.product[j] = temp;
+				}
+			}
+		}
+		this.printProduct();
+	}
+
+	public void printDiscountLow() {
+		for (int i = 0; i < this.index - 1; i++) {
+			for (int j = i + 1; j < this.index; j++) {
+				if (this.product[i].discount > this.product[j].discount) {
+					Product temp = this.product[i];
+					this.product[i] = this.product[j];
+					this.product[j] = temp;
+				}
+			}
+		}
+		this.printProduct();
+	}
+
+	public void order() {
+		printProduct();
+
+		System.out.println("구매서 작성");
+		if (this.index == 0) {
+			System.out.println("아직 상품이 등록되지 않았습니다.");
+		} else {
+			System.out.println("구매서에 작성할 상품의 번호를 입력해 주세요.");
+			Scanner scanner = new Scanner(System.in);
+			String inputString = scanner.nextLine();
+			int inputNum = Integer.parseInt(inputString);
+			if (product[inputNum].stock > 0) {
+				System.out.println("구매하실 상품의 이름과 판매가입니다.");
+				System.out.println("상품명 : " + product[inputNum].name);
+				System.out.println("판매가 : " + Math.ceil(product[inputNum].realPrice));
+				System.out.println("구매자 이름을 작성해 주세요.");
+				String inputName = scanner.nextLine();
+				System.out.println("구매자 연락처를 작성해 주세요.");
+				String inputContact = scanner.nextLine();
+				System.out.println("구매자 배송지 주소를 작성해 주세요.");
+				String inputAddress = scanner.nextLine();
+				this.customer[this.index2] = new Customer(product[inputNum].name,
+						Math.ceil(product[inputNum].realPrice), inputName, inputContact, inputAddress);
+				index2++;
+				this.product[inputNum].stock--;
+			} else {
+				System.out.println("해당 상품은 품절되었습니다.");
+			}
+		}
+	}
+
+	public void printOder() {
+		if (this.index2 == 0) {
+			System.out.println("아직 구매서가 없습니다.");
+		} else {
+			for (int i = 0; i < this.index2; i++) {
+				System.out.println(i + "번째 구매서");
+				System.out.println("상품명 : " + customer[i].productName + ", 상품가격" + customer[i].realPrice + ", 구매자 이름"
+						+ customer[i].name + ", 구매자 연락처" + customer[i].contact + ", 구매자 주소" + customer[i].address);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Product {
+	String name;
+	int price;
+	int stock;
+	int discount;
+	int realPrice;
+
+	Product(String name, int price, int stock, int discount, int realPrice) {
+		this.name = name;
+		this.price = price;
+		this.stock = stock;
+		this.discount = discount;
+		this.realPrice = realPrice;
+	}
+}

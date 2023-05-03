@@ -1,0 +1,47 @@
+package Movie;
+
+import java.util.Scanner;
+
+public class Title {
+	String moiveName;
+	int price;
+	int totalPrice;
+	int count;
+	
+	Title(String moiveName){
+		this.moiveName = moiveName;
+	}
+
+	public void titleInfo() {
+		Genre[] genre = new Genre[3];
+		genre[0] = new Action();
+		genre[1] = new Fantasy();
+		genre[2] = new Romance();
+		System.out.println("영화의 장르를 선택하세요");
+		System.out.println("1. " + genre[0].name);
+		System.out.println("2. " + genre[1].name);
+		System.out.println("3. " + genre[2].name);
+		Scanner scanner = new Scanner(System.in);
+		String inputString = scanner.nextLine();
+		if (inputString.equals("1")) {
+			this.genre = genre[0].name;
+			this.price = genre[0].price;
+		} else if (inputString.equals("2")) {
+			this.genre = genre[1].name;
+			this.price = genre[1].price;
+		} else if (inputString.equals("3")) {
+			this.genre = genre[2].name;
+			this.price = genre[2].price;
+		}
+	}
+	public void totalPrice() {
+		for(int i=0; i<count; i++) {
+			totalPrice = totalPrice + this.price;
+		}
+		System.out.println(totalPrice);
+	}
+	@Override
+	public String toString() {
+		return this.name + this.genre + this.price;
+	}
+}

@@ -1,0 +1,70 @@
+package zNote;
+
+import java.util.Arrays;
+
+public class Asd {
+	public static void main(String[] args) {
+		String[] park = { "OOO", "OSO", "OXO", "OOO" };
+		String[] routes = { "E 2", "S 2", "N 3" };
+		int y = park.length;
+		int x = park[0].length();
+		String[][] arr = new String[y][x];
+		int startY = 0;
+		int startX = 0;
+
+		for (int i = 0; i < y; i++) {
+			String[] str = park[i].split("");
+			for (int j = 0; j < x; j++) {
+				arr[i][j] = str[j];
+				if (arr[i][j].equals("S")) {
+					startY = i;
+					startX = j;
+				}
+			}
+		}
+		System.out.println(startY + "," + startX);
+//		String test = "E 2";
+//		String[] test2 = new String[1];
+//		String a ="";
+//		int b = 0;
+//		a = test.replace(" ", "").replaceAll("[0-9]","");
+//		b = Integer.parseInt(test.replace(" ", "").replaceAll("[A-Z]", ""));
+
+		String[] direction = new String[routes.length];
+		int[] go = new int[routes.length];
+		for (int i = 0; i < routes.length; i++) {
+			direction[i] = routes[i].replace(" ", "").replaceAll("[0-9]", "");
+			go[i] = Integer.parseInt(routes[i].replace(" ", "").replaceAll("[A-Z]", ""));
+		}
+		int endY = 0;
+		int endX = 0;
+		for (int i = 0; i < routes.length; i++) {
+			if (direction[i].equals("N")) {
+				if (startY - endY - go[i] < 0) {
+					continue;
+				} else {
+					endY = endY - go[i];
+				}
+			} else if (direction[i].equals("S")) {
+				if (startY + endY + go[i] > y) {
+					continue;
+				} else {
+					endY = endY + go[i];
+				}
+			} else if (direction[i].equals("W")) {
+				if (startX - endX - go[i] < 0) {
+					continue;
+				} else {
+					endX = endX - go[i];
+				}
+			} else if (direction[i].equals("E")) {
+				if (startX + endX + go[i] > x) {
+					continue;
+				} else {
+					endX = endX + go[i];
+				}
+			}
+		}
+		System.out.println(endY + "," + endX);
+	}
+}

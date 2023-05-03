@@ -1,0 +1,24 @@
+
+public class First {
+	public static String first(String n) {
+		String answer = "";
+		String[] answer2 = n.split("");
+		for (int i = 0; i < answer2.length; i++) {
+			if (answer2[0].equals("0")) {
+				answer = "-1";
+				break;
+			} else if (i > 0 && i < answer2.length && answer2[i].equals("0")) {
+				answer2[i] = answer2[i - 1];
+			}
+		}
+		for (int i = 0; i < answer2.length; i++) {
+			answer = answer + answer2[i];
+		}
+		return answer;
+	}
+
+	public static void main(String[] args) {
+		String n = "012";
+		System.out.println(first(n));
+	}
+}

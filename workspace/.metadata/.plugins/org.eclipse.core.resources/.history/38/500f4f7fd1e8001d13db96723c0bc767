@@ -1,0 +1,19 @@
+package zNote;
+
+public class Awq {
+	public static void main(String[] args) {
+		String[] a = { "aya", "ye", "woo", "ma" };
+		String[] b = { "ayaye", "uuuma", "ye", "yemawoo", "ayaa" };
+		int count = 0;
+		for (int i = 0; i < b.length; i++) {
+			String c = "";
+			for(int j=0; j<a.length; j++) {
+				c = b[i].replace(a[j],"?");
+			}
+			if(c.contains("??")) {
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+}

@@ -1,0 +1,10 @@
+package zNote;
+
+import java.util.Arrays;
+
+public class Asd {
+public static void main(String[] args) {
+	String a = "abcd";
+	System.out.println(Arrays.toString(arr));
+}
+}

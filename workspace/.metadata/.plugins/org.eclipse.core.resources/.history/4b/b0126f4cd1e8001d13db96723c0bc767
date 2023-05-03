@@ -1,0 +1,17 @@
+package zNote;
+
+public class Awq {
+public static void main(String[] args) {
+	String[] a = {"aya", "ye", "woo", "ma"};
+	String[] b = {"ayaye", "uuuma", "ye", "yemawoo", "ayaa"};
+	
+	String c = "aya";
+	String d = "ayaaya";
+	String e = "ayaay";
+	
+	String f = "";
+	
+	f = e.replace(c, "?");
+	System.out.println(f);
+}
+}

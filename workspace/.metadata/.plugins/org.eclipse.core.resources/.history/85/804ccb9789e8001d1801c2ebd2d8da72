@@ -1,0 +1,12 @@
+
+public class Customer {
+	String name;
+	String contact;
+	String address;
+
+	Customer(String name, String contact, String address) {
+		this.name = name;
+		this.contact = contact;
+		this.address = address;
+	}
+}

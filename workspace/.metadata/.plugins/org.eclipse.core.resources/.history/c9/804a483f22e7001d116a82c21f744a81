@@ -1,0 +1,43 @@
+package Movie;
+
+import java.util.Scanner;
+
+public class MainClass {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		Genre[] genre = { new Action(), new Fantasy(), new Romance() };
+		int count = 0;
+		for (int i = 0; i < 99999; i++) {
+			System.out.println("원하시는 선택지를 누르세요.");
+			System.out.println("1. 액션 장르 입력.");
+			System.out.println("2. 판타지 장르 입력.");
+			System.out.println("3. 로맨스 장르 입력.");
+			System.out.println("P. 입력된 영화 출력.");
+			System.out.println("q. 종료.");
+			String inputString = scanner.nextLine();
+			if (inputString.equals("1")) {
+				genre[0].addName();
+				count++;
+			} else if (inputString.equals("2")) {
+				genre[1].addName();
+				count++;
+			} else if (inputString.equals("3")) {
+				genre[2].addName();
+				count++;
+			} else if (inputString.equals("P")) {
+				System.out.println("영화의 총 개수");
+				System.out.println(count);
+				System.out.println("종합정보");
+				genre[0].total();
+				genre[1].total();
+				genre[2].total();
+				System.out.println("총 합계 : "+genre[0].total+genre[1].total+genre[2].total);
+			} else if (inputString.equals("q")) {
+				System.out.println("종료되었습니다.");
+				break;
+			} else {
+				System.out.println("입력이 잘못되었습니다.");
+			}
+		}
+	}
+}
