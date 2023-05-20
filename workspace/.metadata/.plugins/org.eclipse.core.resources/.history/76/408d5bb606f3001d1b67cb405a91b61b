@@ -1,0 +1,66 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Quiz2 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String inputString = scanner.nextLine();
+		int inputNum = Integer.parseInt(inputString);
+		int answer = 0;
+		int[] x = new int[inputNum];
+		int[] y = new int[inputNum];
+		int area = 100 * inputNum;
+		for (int i = 0; i < inputNum; i++) {
+			String a = scanner.nextLine();
+			String[] b = a.split(" ");
+			x[i] = Integer.parseInt(b[0]);
+			y[i] = Integer.parseInt(b[1]);
+		}
+		int[] x2 = new int[11 * inputNum];
+		int[] y2 = new int[11 * inputNum];
+		int count = 0;
+		for(int i=0; i<inputNum; i++) {
+			for(int j=0; j<=10; j++) {
+				x2[count] = x[i]+j;
+				y2[count] = y[i]+j;
+				count++;
+			}
+		}
+		Arrays.sort(x2);
+		Arrays.sort(y2);
+		
+		int[] cntX = new int[x2[count]+1];
+		int[] cntY = new int[y2[count]+1];
+		int countX = 0;
+		int countY = 0;
+		for(int i=0; i<11 * inputNum; i++) {
+			cntX[x[i]]++;
+			cntY[y[i]]++;
+		}
+		for(int i=0; i<cntX.length; i++) {
+			if(cntX[i]>0) {
+				countX++;
+			}
+			if(cntY[i]>0) {
+				countY++;
+			}
+		}
+		
+		int[] dupX = new int[countX];
+		int[] dupY = new int[countY];
+		int countX2 = 0;
+		int countY2 = 0;
+		for(int i=0; i<cntX.length; i++) {
+			if(cntX[i]>0) {
+				dupX[countX2] = i;
+				countX2++;
+			}
+			if(cntY[i]>0) {
+				dupY[countY2] = i;
+				countY2++;
+			}
+		}
+		
+		
+	}
+}

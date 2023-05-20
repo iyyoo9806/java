@@ -1,0 +1,43 @@
+package answer0516;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MainClass {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<Student> student = new ArrayList<Student>();
+		for (int i = 0; i < 9999999; i++) {
+			System.out.println("1. 데이터 입력");
+			System.out.println("2. 전체 데이터 출력");
+			System.out.println("3. 최고 성적자 출력");
+			System.out.println("q. 종료");
+			String menuSelect = scanner.nextLine();
+			if (menuSelect.equals("1")) {
+//				// 1
+//				Student item = new Student();
+//				item.inputData();
+//				student.add(item);
+				
+				// 2
+//				Scanner scanner = new Scanner(System.in);
+//				System.out.println("name : ");
+//				String tmp = scanner.nextLine();
+//				String name = tmp;
+//				System.out.println("score : ");
+//				tmp = scanner.nextLine();
+//				int score = Integer.parseInt(tmp);
+//				student.add(new Student(name, score));
+				
+				// 3
+				student.add(new Student());
+			} else if (menuSelect.equals("2")) {
+				for (int j = 0; j < student.size(); j++) {
+					System.out.println(student.get(j));
+				}
+			} else if (menuSelect.equals("q")) {
+				break;
+			}
+		}
+	}
+}

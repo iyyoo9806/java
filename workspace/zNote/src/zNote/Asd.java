@@ -40,38 +40,64 @@ public class Asd {
 		System.out.println(Arrays.toString(go));
 		int endY = startY;
 		int endX = startX;
-//		for (int i = 0; i < routes.length; i++) {
-//			if (direction[i].equals("N")) {
-//				if (endY - go[i] < 0||arr[endY - go[i]][endX].equals("X")) {
-//					continue;
-//				} else {
-//					endY = endY - go[i];
-//				}
-//			} else if (direction[i].equals("S")) {
-//				if (endY + go[i] > y||arr[endY + go[i]][endX].equals("X")) {
-//					continue;
-//				} else {
-//					endY = endY + go[i];
-//				}
-//			} else if (direction[i].equals("W")) {
-//				if (endX - go[i] < 0||arr[endY][endX - go[i]].equals("X")) {
-//					continue;
-//				} else {
-//					endX = endX - go[i];
-//				}
-//			} else if (direction[i].equals("E")) {
-//				if (endX + go[i] > x) {
-//					continue;
-//				} else {
-//					if(arr[endY][endX + go[i]].equals("X")) {
-//						continue;
-//					}else {
-//					endX = endX + go[i];
-//					}
-//				}
-//			}
-//		}
+
+		for (int i = 0; i < routes.length; i++) {
+
+			if (direction[i].equals("N")) {
+				if (endY - go[i] < 0) {
+					continue;
+				} else {
+//					arr[endY - go[i]][endX].equals("X")
+//					int j = endY; j < y; j++
+					for (int j = endY; j < go[i]; j++) {
+						if (arr[j][endX].equals("X")) {
+							continue;
+						} else {
+							endY = endY - go[i];
+						}
+					}
+				}
+			}
+
+			if (direction[i].equals("S")) {
+				if (endY + go[i] >= y) {
+					continue;
+				} else {
+					for (int j = endY; j < go[i]; j++) {
+						if (arr[j][endX].equals("X")) {
+							continue;
+						} else {
+							endY = endY + go[i];
+						}
+					}
+				}
+			}
+
+			if (direction[i].equals("W")) {
+				if (endX - go[i] < 0) {
+					continue;
+				} else {
+					if (arr[endY][endX - go[i]].equals("X")) {
+						continue;
+					} else {
+						endX = endX - go[i];
+					}
+				}
+			}
+
+			if (direction[i].equals("E")) {
+				if (endX + go[i] >= x) {
+					continue;
+				} else {
+					if (arr[endY][endX + go[i]].equals("X")) {
+						continue;
+					} else {
+						endX = endX + go[i];
+					}
+				}
+			}
+
+		}
 		System.out.println(endY + "," + endX);
 	}
-	//나는야 개똥벌레~ 친구가 없네~
 }

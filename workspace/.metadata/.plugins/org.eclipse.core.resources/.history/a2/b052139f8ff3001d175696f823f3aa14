@@ -1,0 +1,10 @@
+package quiz0516;
+
+public class Student {
+	String name;
+	int score;
+	
+	Student(String name, int score){
+		
+	}
+}

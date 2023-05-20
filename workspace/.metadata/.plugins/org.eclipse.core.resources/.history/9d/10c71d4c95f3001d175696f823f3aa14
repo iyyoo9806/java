@@ -1,0 +1,13 @@
+package quiz0516;
+
+public class SelectedRoom {
+	String name;
+	String studentName;
+	int score;
+	
+	SelectedRoom(String name, String studentName, int score){
+		this.name = name;
+		this.studentName = studentName;
+		this.score = score;
+	}
+}

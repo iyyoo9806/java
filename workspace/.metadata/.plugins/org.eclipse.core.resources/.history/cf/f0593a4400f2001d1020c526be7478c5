@@ -1,0 +1,9 @@
+package zNote;
+
+import java.io.PrintWriter;
+
+public class F {
+	public static void main(String[] args) {
+		PrintWriter pw = new PrintWriter(System.out);
+	}
+}

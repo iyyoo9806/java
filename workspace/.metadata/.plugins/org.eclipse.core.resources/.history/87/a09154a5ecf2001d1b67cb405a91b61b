@@ -1,0 +1,32 @@
+import java.util.Arrays;
+
+public class PracticeFirst {
+	public static void gP(int[] arr, int size, int[] branch, int level, boolean[] visited, int count) {
+		if (level >= size - 1) {
+			System.out.println(Arrays.toString(branch));
+			return;
+		}
+
+		for (int i = 0; i < size; i++) {
+			if (!visited[i]) {
+				branch[++level] = arr[i];
+				visited[i] = true;
+				gP(arr, size, branch, level, visited, count);
+				visited[i] = false;
+				level--;
+				++count;
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		int[] arr = { 5, 3, 2, 6, 7, 8, 1 };
+		int size = arr.length;
+		int[] branch = new int[size];
+		int level = -1;
+		boolean[] visited = new boolean[size];
+		int count = 0;
+		gP(arr, size, branch, level, visited, count);
+
+	}
+}

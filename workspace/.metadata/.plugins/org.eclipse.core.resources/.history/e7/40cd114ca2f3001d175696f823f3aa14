@@ -1,0 +1,30 @@
+package quiz0516;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Room {
+	String name;
+	ArrayList<Student> student = new ArrayList<Student>();
+	
+	
+	Room(){
+		this.inputData();
+	}
+	
+	Room(String name){
+		this.name = name;
+	}
+	
+	public void inputData() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("name : ");
+		String tmp = scanner.nextLine();
+		this.name = tmp;
+	}
+	
+	@Override
+	public String toString() {
+		return this.name;
+	}
+}

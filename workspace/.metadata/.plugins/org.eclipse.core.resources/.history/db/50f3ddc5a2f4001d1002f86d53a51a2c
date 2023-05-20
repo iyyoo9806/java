@@ -1,0 +1,7 @@
+
+public class Quiz1 {
+	int aera(int n, int k){
+		
+		return aera(n,k);
+	}
+}

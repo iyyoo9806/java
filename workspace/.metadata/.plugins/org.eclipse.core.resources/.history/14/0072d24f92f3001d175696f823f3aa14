@@ -1,0 +1,22 @@
+package quiz0516;
+
+import java.util.Scanner;
+
+public class Room {
+	String name;
+	
+	Room(){
+		
+	}
+	
+	Room(String name){
+		this.name = name;
+	}
+	
+	public void inputData() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("name : ");
+		String tmp = scanner.nextLine();
+		this.name = tmp;
+	}
+}

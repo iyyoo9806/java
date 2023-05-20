@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+
+public class MainClass {
+	public static void main(String[] args) {
+		ArrayList<Student> student = new ArrayList<Student>();
+		
+		
+		
+		
+		
+//		ArrayList<String> a = new ArrayList<String>();
+//		a.add(new String("bb"));
+//		a.get(0); //0번째 뽑아내기
+//		System.out.println(a.get(0));
+//		a.size(); // 길이 혹은 크기
+////		Object b = new String("f");
+////		String c = new String("p");
+////		((String)b).getBytes();
+////		c.getBytes();
+	}
+}

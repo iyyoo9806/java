@@ -1,0 +1,14 @@
+import java.util.Arrays;
+
+public class Quiz3 {
+	public static void main(String[] args) {
+		int a = 13;
+		int[] b = new int[11];
+		int count = 0;
+		for(int i=a; i<=a+10; i++) {
+			b[count] = i;
+			count++;
+		}
+		System.out.println(Arrays.toString(b));
+	}
+}

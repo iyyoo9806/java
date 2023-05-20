@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+
+public class MainClass {
+	public static void main(String[] args) {
+		ArrayList<String> a = new ArrayList<String>();
+		a.add(new String("bb"));
+		a.get(0);
+		System.out.println(a.get(0););
+		
+		
+		
+//		Object b = new String("f");
+//		String c = new String("p");
+//		((String)b).getBytes();
+//		c.getBytes();
+	}
+}

@@ -1,21 +1,102 @@
 package zNote;
 
+import java.util.Arrays;
+
 public class Awq {
-	public static int[] solution(int[] arr, int[] query) {
-        int[] answer = new int[query.length];
-        int count = arr.length;
-        for(int i=0; i<query.length; i++) {
-        	int[] a = new int[arr.length];
-        	for(int j=query[i]; j<arr.length; j++) {
-        		
-        	}
-        }
-        
-        return answer;
-    }
 	public static void main(String[] args) {
-		int[] arr = {0, 1, 2, 3, 4, 5};
-		int[] query = {4, 1, 2};
-		System.out.println(solution(arr,query));
+		String[] park = { "OSO", "OOO", "OXO", "OOO" };
+		String[] routes = { "E 2", "S 3", "W 1" };
+		int y = park.length;
+		int x = park[0].length();
+		String[][] arr = new String[y][x];
+		int startY = 0;
+		int startX = 0;
+		int count1 = 0;
+		int count2 = 0;
+		for (int i = 0; i < y; i++) {
+			String[] str = park[i].split("");
+			for (int j = 0; j < x; j++) {
+				arr[i][j] = str[j];
+				if (arr[i][j].equals("S")) {
+					startY = i;
+					startX = j;
+					count1 = i;
+					count2 = j;
+				}
+			}
+		}
+		System.out.println(startY + "," + startX);
+//		String test = "E 2";
+//		String[] test2 = new String[1];
+//		String a ="";
+//		int b = 0;
+//		a = test.replace(" ", "").replaceAll("[0-9]","");
+//		b = Integer.parseInt(test.replace(" ", "").replaceAll("[A-Z]", ""));
+
+		String[] direction = new String[routes.length];
+		int[] go = new int[routes.length];
+		for (int i = 0; i < routes.length; i++) {
+			direction[i] = routes[i].replace(" ", "").replaceAll("[0-9]", "");
+			go[i] = Integer.parseInt(routes[i].replace(" ", "").replaceAll("[A-Z]", ""));
+		}
+		System.out.println(Arrays.toString(direction));
+		System.out.println(Arrays.toString(go));
+		int endY = startY;
+		int endX = startX;
+
+		for (int i = 0; i < routes.length; i++) {
+
+			if (direction[i].equals("N")) {
+				if (endY - go[i] < 0) {
+					continue;
+				} else {
+//					arr[endY - go[i]][endX].equals("X")
+//					int j = endY; j < y; j++
+					if (arr[endY - go[i]][endX].equals("X")) {
+						continue;
+					} else {
+						endY = endY - go[i];
+					}
+				}
+			}
+
+			if (direction[i].equals("S")) {
+				if (endY + go[i] >= y) {
+					continue;
+				} else {
+					if (arr[endY + go[i]][endX].equals("X")) {
+						continue;
+					} else {
+						endY = endY + go[i];
+					}
+				}
+			}
+
+			if (direction[i].equals("W")) {
+				if (endX - go[i] < 0) {
+					continue;
+				} else {
+					if (arr[endY][endX - go[i]].equals("X")) {
+						continue;
+					} else {
+						endX = endX - go[i];
+					}
+				}
+			}
+
+			if (direction[i].equals("E")) {
+				if (endX + go[i] >= x) {
+					continue;
+				} else {
+					if (arr[endY][endX + go[i]].equals("X")) {
+						continue;
+					} else {
+						endX = endX + go[i];
+					}
+				}
+			}
+
+		}
+		System.out.println(endY + "," + endX);
 	}
 }

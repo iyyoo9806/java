@@ -1,0 +1,45 @@
+package answer0516;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MainClass {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<Student> student = new ArrayList<Student>();
+		for (int i = 0; i < 9999999; i++) {
+			System.out.println("1. 데이터 입력");
+			System.out.println("2. 전체 데이터 출력");
+			System.out.println("3. 최고 성적자 출력");
+			System.out.println("q. 종료");
+			String menuSelect = scanner.nextLine();
+			if (menuSelect.equals("1")) {
+				student.add(new Student());
+
+			} else if (menuSelect.equals("2")) {
+				for (int j = 0; j < student.size(); j++) {
+					System.out.println(student.get(j));
+				}
+
+			}else if (menuSelect.equals("3")) {
+				try {
+					for (int i = 0; i < student.size() - 1; i++) {
+						for (int j = 0; j < student.size() - (i + 1); j++) {
+							if (student.get(j).score < student.get(j + 1).score) {
+								Student temp = student.get(j);
+								student.set(j, student.get(j + 1));
+								student.set(j + 1, temp);
+							}
+						}
+					}
+					System.out.println(student.get(0));
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					System.out.println("학생의 정보가 없습니다.");;
+				}
+			} else if (menuSelect.equals("q")) {
+				break;
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Quiz2 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String inputString = scanner.nextLine();
+		int inputNum = Integer.parseInt(inputString);
+		int answer = 0;
+		int[] x = new int[inputNum];
+		int[] y = new int[inputNum];
+		int area = 100 * inputNum;
+		for (int i = 0; i < inputNum; i++) {
+			String a = scanner.nextLine();
+			String[] b = a.split(" ");
+			x[i] = Integer.parseInt(b[0]);
+			y[i] = Integer.parseInt(b[1]);
+		}
+		int[] x2 = new int[10 * inputNum];
+		int[] y2 = new int[10 * inputNum];
+		int count = 0;
+		for(int i=0; i<inputNum; i++) {
+			for(int j=1; j<=10; j++) {
+				x2[count] = x[i]+j;
+				y2[count] = y[i]+j;
+			}
+		}
+		
+	}
+}

@@ -1,0 +1,11 @@
+package quiz0516;
+
+public class Student {
+	String name;
+	int score;
+	
+	Student(){
+		this.name = name;
+		this.score = score;
+	}
+}

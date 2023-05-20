@@ -1,0 +1,16 @@
+package quiz0516;
+
+public class Student {
+	String name;
+	int score;
+	
+	Student(String name, int score){
+		this.name = name;
+		this.score = score;
+	}
+	
+	@Override
+	public String toString() {
+		return this.name + " (" + this.score + ")";
+	}
+}

@@ -1,0 +1,22 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Quiz2 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int inputNum = scanner.nextInt();
+		int[][] square = new int[100][100];
+		int answer = 0;
+		int area = 100*inputNum;
+		for(int i=0; i<inputNum; i++) {
+			int y = scanner.nextInt();
+			int x = scanner.nextInt();
+			for(int j=y; j<y+10; j++) {
+				for(int k=x; k<x+10; j++) {
+					square[j][k] = 1;
+				}
+			}
+		}
+		System.out.println(Arrays.deepToString(square));
+	}
+}

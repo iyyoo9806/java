@@ -1,0 +1,32 @@
+package quiz0516;
+
+import java.util.ArrayList;
+
+public class MainClass {
+	public static void main(String[] args) {
+		ArrayList<Student> student = new ArrayList<Student>();
+		
+		student.add(new Student("가렌", 100));
+		student.add(new Student("다리우스", 100));
+		student.add(new Student("카타리나", 100));
+		student.add(new Student("럭스", 100));
+		student.add(new Student("케이틀린", 100));
+		student.add(new Student("바이", 100));
+		student.add(new Student("징크스", 100));
+		student.add(new Student("요릭", 100));
+		student.add(new Student("타릭", 100));
+		student.add(new Student("카시오페아", 100));
+		student.add(new Student("", 100));
+		student.add(new Student("홍길동", 100));
+		student.add(new Student("홍길동", 100));
+		student.add(new Student("홍길동", 100));
+		student.add(new Student("홍길동", 100));
+		student.add(new Student("홍길동", 100));
+		student.add(new Student("홍길동", 100));
+		student.add(new Student("홍길동", 100));
+		student.add(new Student("홍길동", 100));
+		student.add(new Student("홍길동", 100));
+		System.out.println(student.size());
+		
+	}
+}

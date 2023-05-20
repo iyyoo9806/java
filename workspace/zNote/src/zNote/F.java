@@ -1,20 +1,22 @@
 package zNote;
 
-import java.util.Arrays;
+import java.io.PrintWriter;
 
 public class F {
-	public static String solution(String my_string, int n) {
-        String answer = "";
-        String[] a = my_string.split("");
-//        System.out.println(Arrays.toString(a));
-        for(int i=0; i<n; i++){
-            
-        }
-        return answer;
-    }
-
 	public static void main(String[] args) {
-		String my_string = "hello";
-		System.out.println(solution(my_string,3));
+		PrintWriter pw = new PrintWriter(System.out);
+		
+		String str1 = "Hello";
+		
+		pw.print(str1);
+		pw.print(str1);
+		pw.println();
+		pw.print(str1);
+		pw.println();
+		pw.printf("%.2f", Math.PI);
+		pw.flush();
+		pw.print("야호");
+//		pw.close();
+		pw.print(str1);
 	}
 }
