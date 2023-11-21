@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wise.mappers.boardMapper">
+
+<!-- 사용자 게시물 + 페이징 + 검색 -->
+<select id="listPage" parameterType="hashMap" resultType="com.wise.domain.BoardVO">
+	select
+		IDX,TITLE,CONTENTS,NAME,DEGREE,FILEPATH,DATE_FORMAT(date, '%Y%m%d') as DATE
+			from spring_pro.board
+		where id =#{id}
+		
+		 <if test='searchType.equals("title")'>
+		  AND title LIKE concat('%', #{keyword}, '%')
+		 </if>
+ 
+		 <if test='searchType.equals("date")'>
+		  AND date LIKE concat('%', #{keyword}, '%')
+		 </if>
+		
+		order by idx desc
+		limit #{displayPost, jdbcType=INTEGER}, #{postNum, jdbcType=INTEGER}
+</select>
+
+<select id="list" parameterType="hashMap" resultType="com.wise.domain.BoardVO">
+	select
+		IDX,TITLE,CONTENTS,NAME,DEGREE,FILEPATH,DATE_FORMAT(date, '%Y%m%d') as DATE
+		from spring_pro.board
+		order by idx desc
+</select>
+
+
+<!-- 관리자 게시물 +페이징 + 검색 -->
+<select id="adminList" parameterType="hashMap" resultType="com.wise.domain.BoardVO">
+	select
+		IDX,TITLE,CONTENTS,NAME,DEGREE,FILEPATH,DATE_FORMAT(date, '%Y-%m-%d') as DATE
+			from spring_pro.board
+			
+		 <if test='searchType.equals("title")'>
+		  WHERE title LIKE concat('%', #{keyword}, '%')
+		 </if>
+ 
+		 <if test='searchType.equals("date")'>
+		  WHERE date LIKE concat('%', #{keyword}, '%')
+		 </if>
+			
+		order by idx desc
+		limit #{displayPost}, #{postNum}
+</select>
+
+<!-- 관리자 게시물 + 검색 엑셀 다운로드 -->
+<select id="excel" parameterType="hashMap" resultType="com.wise.domain.BoardVO">
+	select
+		IDX,TITLE,CONTENTS,NAME,DEGREE,FILEPATH,DATE_FORMAT(date, '%Y-%m-%d') as DATE
+			from spring_pro.board
+			
+		 <if test='searchType.equals("title")'>
+		  WHERE title LIKE concat('%', #{keyword}, '%')
+		 </if>
+ 
+		 <if test='searchType.equals("date")'>
+		  WHERE date LIKE concat('%', #{keyword}, '%')
+		 </if>
+</select>
+
+<!-- 게시물 작성 -->
+<insert id="write">
+	insert into spring_pro.board(IDX, ID, TITLE, CONTENTS, NAME, DEGREE, FILEPATH, DATE, CODE)
+		values (NULL, #{id}, #{title}, #{contents}, #{name}, #{degree},
+		#{filepath}, SYSDATE(), #{category})
+</insert>
+
+<!-- 조회 -->
+<select id="read" resultType="com.wise.domain.BoardVO">
+	select IDX, TITLE, CONTENTS, NAME, DEGREE, FILEPATH, DATE
+		from spring_pro.board
+		where idx = #{idx}
+</select>
+
+<!-- 수정 -->
+<update id="modify" parameterType="com.wise.domain.BoardVO">
+	update spring_pro.board
+		set
+			TITLE = #{title},
+			CONTENTS = #{contents}
+		where idx = #{idx}
+</update>
+
+<!-- 삭제 -->
+<delete id="delete" parameterType="String">
+	delete
+		from spring_pro.board
+	where IDX = #{idx}
+</delete>
+
+<!-- 게시물 총 갯수 -->
+<select id="countAdmin" resultType="int">
+	select count(idx)
+		from spring_pro.board
+</select>
+
+
+<!-- 게시물 아이디별 갯수 + 검색 -->
+<select id="count" resultType="int" parameterType="hashMap">
+	select count(idx)
+		from spring_pro.board
+		where id =#{id}
+		
+		<if test='searchType.equals("title")'>
+		  AND title LIKE concat('%', #{keyword}, '%')
+		 </if>
+ 
+		 <if test='searchType.equals("date")'>
+		  AND date LIKE concat('%', #{keyword}, '%')
+		 </if>
+</select>
+
+<!-- 파일 업로드 -->
+<insert id="upload" parameterType="hashmap">
+    <![CDATA[
+        INSERT INTO spring_pro.file
+        (
+            BOARD_IDX,
+            ORG_FILE_NAME,
+            SAVE_FILE_NAME,
+            FILE_SIZE,
+            ID,
+            CREA_DATE,
+            UPDATE_DATE
+        )
+        VALUES
+        (
+            #{ BOARD_IDX},
+            #{ ORG_FILE_NAME},
+            #{ SAVE_FILE_NAME},
+            #{ FILE_SIZE},
+            #{ id},
+            SYSDATE(),
+            SYSDATE()
+        )
+    ]]>
+</insert>
+
+<!-- 최신 idx값 찾기 -->
+<select id="nextIdx" resultType="String">
+select Auto_increment from 
+information_schema.tables where 
+table_schema = 'spring_pro' and table_name = 'board'
+</select>
+
+
+
+</mapper>
